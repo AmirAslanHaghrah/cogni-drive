@@ -1,27 +1,39 @@
-# Cogni-Drive SysMon
+# Cogni-Drive
 
-**Cogni-Drive SysMon** is a lightweight system monitoring service for **Raspberry Pi OS (Headless)** designed for embedded, robotic, and autonomous driving platforms.
+**Cogni-Drive** is a modular software foundation for an **autonomous vehicle driving system**, designed to run on embedded Linux platforms such as **Raspberry Pi** in headless mode.
 
-It continuously monitors:
-- CPU usage
-- RAM usage
-- CPU temperature
-
-and provides a **hardware status indicator (blinking LED)** to represent normal system operation.
-
-The project follows a **production-grade Python structure**, supports **DEBUG / RELEASE** modes, and is suitable for long-running services in autonomous systems.
+The project focuses on **reliability, determinism, and resource awareness**, which are critical requirements in autonomous driving applications. It provides core infrastructure for monitoring system health, managing hardware signals, and serving as a stable base for higher-level autonomy stacks such as perception, localization, planning, and control.
 
 ---
 
-## Features
+## Project Vision
 
-- CPU, RAM, and temperature monitoring  
-- GPIO status LED (heartbeat indicator)  
-- DEBUG / RELEASE build modes  
-- Performance-aware (reduced overhead in RELEASE mode)  
-- Clean `src/`-based Python package layout  
-- Ready for systemd (auto-start, auto-restart)  
-- Testable and extensible architecture  
+Autonomous driving systems operate under strict real-time and safety constraints.  
+Cogni-Drive is designed with the following goals:
+
+- Ensure **continuous awareness of system health**
+- Detect abnormal CPU, memory, or thermal conditions early
+- Provide a **hardware-level heartbeat indicator** for system liveness
+- Support long-running, unattended operation in embedded environments
+- Act as a **base layer** beneath perception (vision), decision-making, and control modules
+
+This makes Cogni-Drive suitable for **research prototypes, academic projects, and early industrial deployments** of autonomous vehicles and mobile robots.
+
+---
+
+## Core Capabilities
+
+- Real-time monitoring of:
+  - CPU utilization
+  - RAM usage
+  - CPU temperature
+- Hardware heartbeat LED indicating normal system operation
+- Dual build modes:
+  - **DEBUG** – for development, diagnostics, and experimentation
+  - **RELEASE** – optimized for deployment and long-term operation
+- Performance-aware design (optional metrics disabled in RELEASE)
+- Designed to run as a persistent Linux service (systemd)
+- Clean, scalable, production-grade Python project structure
 
 ## Install & Enable Cogni-Drive as a systemd Service
 
