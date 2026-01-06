@@ -1,0 +1,20 @@
+[project]
+name = "spara-sysmon"
+version = "0.1.0"
+description = "CPU/RAM/TEMP monitor + status LED for Raspberry Pi"
+requires-python = ">=3.10"
+dependencies = [
+  "psutil>=5.9",
+  "PyYAML>=6.0",
+  "gpiozero>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+  "mypy>=1.10",
+]
+
+[project.scripts]
+spara-sysmon = "spara_sysmon.main:main"

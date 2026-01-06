@@ -1,0 +1,26 @@
+[Unit]
+Description=Cogni-Drive (Autonomous Car Core Monitor)
+After=network.target
+
+[Service]
+Type=simple
+
+# Run from your project directory
+WorkingDirectory=/opt/cogni-drive
+
+# Use the venv Python and run the package
+ExecStart=/opt/cogni-drive/.venv/bin/python -m cogni_drive
+
+# Restart on crash
+Restart=always
+RestartSec=2
+
+# Run as a non-root user (recommended)
+User=pi
+Group=pi
+
+# Environment (optional)
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

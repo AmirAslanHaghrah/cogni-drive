@@ -1,0 +1,16 @@
+# Build mode: DEBUG or RELEASE
+build_mode: "DEBUG"
+
+sampling_interval_sec: 2
+
+log_to_console: false
+log_to_file: true
+log_file: "sysmon.log"
+
+metrics:
+  cpu_percent: false   # disable in RELEASE to reduce overhead
+  cpu_temp: true
+  ram: true
+
+led_gpio_pin: 17
+led_blink_interval_sec: 0.5
