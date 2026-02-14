@@ -1,5 +1,5 @@
 [project]
-name = "spara-sysmon"
+name = "cogni-drive"
 version = "0.1.0"
 description = "CPU/RAM/TEMP monitor + status LED for Raspberry Pi"
 requires-python = ">=3.10"
@@ -17,4 +17,4 @@ dev = [
 ]
 
 [project.scripts]
-spara-sysmon = "spara_sysmon.main:main"
+cogni-drive = "cogni_drive.main:main"

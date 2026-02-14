@@ -1,10 +1,10 @@
 import time
 
-from spara_sysmon.config import load_settings
-from spara_sysmon.core.build_config import make_build_config
-from spara_sysmon.logging import make_logger
-from spara_sysmon.monitor.metrics import read_cpu_temp_c, read_cpu_percent, read_ram_usage
-from spara_sysmon.hardware.status_led import StatusLed
+from cogni_drive.config import load_settings
+from cogni_drive.core.build_config import make_build_config
+from cogni_drive.logging import make_logger
+from cogni_drive.monitor.metrics import read_cpu_temp_c, read_cpu_percent, read_ram_usage
+from cogni_drive.hardware.status_led import StatusLed
 
 def main() -> None:
     settings = load_settings()
@@ -13,7 +13,7 @@ def main() -> None:
     build = make_build_config(build_mode, settings)
 
     logger = make_logger(
-        name="spara_sysmon",
+        name="cogni_drive",
         min_level=build.min_log_level,
         log_to_console=build.log_to_console,
         log_to_file=bool(settings.get("log_to_file", True)),
