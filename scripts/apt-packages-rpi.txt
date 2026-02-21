@@ -1,5 +1,0 @@
-git
-python3-venv
-python3-pip
-# examples you might need later:
-# ffmpeg
